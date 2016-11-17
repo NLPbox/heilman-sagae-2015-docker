@@ -64,5 +64,7 @@ ADD rst_parsing_model.C0.5 /opt/discourse-parsing/rst_parsing_model.C0.5
 ADD train_discourse_parser.log /opt/discourse-parsing/
 ADD article.txt /opt/discourse-parsing/
 
-CMD ["/usr/local/bin/rst_parse", "--segmentation_model", "segmentation_model.C32.0", "--parsing_model", "rst_parsing_model.C0.5"]
-ENTRYPOINT ["/opt/discourse-parsing/article.txt"]
+# by default the container runs the rst_parse command with the supplied model on article.txt
+# cf. https://www.ctl.io/developers/blog/post/dockerfile-entrypoint-vs-cmd/
+ENTRYPOINT ["/usr/local/bin/rst_parse", "--segmentation_model", "segmentation_model.C32.0", "--parsing_model", "rst_parsing_model.C0.5"]
+CMD ["/opt/discourse-parsing/article.txt"]
