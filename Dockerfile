@@ -63,3 +63,5 @@ ADD segmentation_model.C32.0 /opt/discourse-parsing/
 ADD rst_parsing_model.C0.5 /opt/discourse-parsing/rst_parsing_model.C0.5
 ADD train_discourse_parser.log /opt/discourse-parsing/
 ADD article.txt /opt/discourse-parsing/
+
+CMD ["/usr/local/bin/rst_parse"]
