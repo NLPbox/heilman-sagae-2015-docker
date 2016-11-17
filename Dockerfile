@@ -56,3 +56,10 @@ ENV ZPAR_MODEL_DIR /opt/zpar-0.7/models/english
 
 # add script for training the parser on the RST-DT corpus
 ADD train_discourse_parser.sh /opt/discourse-parsing/
+
+# add models trained on RST-DT, the training log and a test file
+
+ADD segmentation_model.C32.0 /opt/discourse-parsing/
+ADD rst_parsing_model.C0.5 /opt/discourse-parsing/rst_parsing_model.C0.5
+ADD train_discourse_parser.log /opt/discourse-parsing/
+ADD article.txt /opt/discourse-parsing/
