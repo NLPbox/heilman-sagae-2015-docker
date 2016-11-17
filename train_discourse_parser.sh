@@ -1,0 +1,22 @@
+# Input Preparation
+
+cd /opt/discourse-parsing
+
+# this creates rst_discourse_tb_edus_TEST.json and rst_discourse_tb_edus_TRAINING.json
+time convert_rst_discourse_tb /corpora/rst_discourse_treebank /corpora/pennTreebank
+time discourseparsing/make_traindev_split.py
+
+
+# Segmentation
+
+time extract_segmentation_features rst_discourse_tb_edus_TRAINING_TRAIN.json rst_discourse_tb_edus_features_TRAINING_TRAIN.tsv
+time extract_segmentation_features rst_discourse_tb_edus_TRAINING_DEV.json rst_discourse_tb_edus_features_TRAINING_DEV.tsv
+
+time tune_segmentation_model rst_discourse_tb_edus_features_TRAINING_TRAIN.tsv rst_discourse_tb_edus_features_TRAINING_DEV.tsv segmentation_model
+
+
+# Parsing
+
+
+time tune_rst_parser rst_discourse_tb_edus_TRAINING_TRAIN.json rst_discourse_tb_edus_TRAINING_DEV.json rst_parsing_model
+
