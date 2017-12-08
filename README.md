@@ -25,6 +25,7 @@ docker run -v /tmp:/tmp -ti heilman-sagae-2015 /tmp/input.txt
 
 ## Example Input
 
+```
 Henryk Szeryng (22 September 1918 - 8 March 1988) was a violin virtuoso 
 of Polish and Jewish heritage.
 
@@ -60,6 +61,7 @@ as the Messiah Strad copy by Jean-Baptiste Vuillaume which he gave to
 Prince Rainier III of Monaco. The "Le Duc" was the instrument on which 
 he performed and recorded mostly, while the latter ("King David" Strad) 
 was donated to the State of Israel.
+```
 
 ## Example Output
 
@@ -143,5 +145,5 @@ was donated to the State of Israel.
 # Citation
 
 Heilman, Michael and Sagae, Kenji (2015).
-[Fast Rhetorical Structure Theory Discourse Parsing](https://arxiv.org/abs/1505.02425)
+[Fast Rhetorical Structure Theory Discourse Parsing.](https://arxiv.org/abs/1505.02425) 
 arXiv preprint arXiv:1505.02425
