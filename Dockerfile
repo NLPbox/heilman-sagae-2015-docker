@@ -57,12 +57,12 @@ ENV ZPAR_MODEL_DIR /opt/zpar-0.7/models/english
 # add script for training the parser on the RST-DT corpus
 ADD train_discourse_parser.sh /opt/discourse-parsing/
 
-# add models trained on RST-DT, the training log and a test file
+# add models trained on RST-DT, the training log and test files
 
-ADD segmentation_model.C32.0 /opt/discourse-parsing/
+ADD segmentation_model.C32.0 train_discourse_parser.log article.txt input_*.txt test_hs2015.py hs2015.sh /opt/discourse-parsing/
 ADD rst_parsing_model.C0.5 /opt/discourse-parsing/rst_parsing_model.C0.5
-ADD train_discourse_parser.log /opt/discourse-parsing/
-ADD article.txt /opt/discourse-parsing/
+
+RUN pip3 install sh # needed for testing
 
 # by default the container runs the rst_parse command with the supplied model on article.txt
 # cf. https://www.ctl.io/developers/blog/post/dockerfile-entrypoint-vs-cmd/
