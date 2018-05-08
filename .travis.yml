@@ -7,4 +7,4 @@ install:
   - docker build -t heilman-sagae .
 
 script:
-  - docker run --entrypoint=/usr/bin/python -ti heilman-sagae test_hs2015.py
+  - docker run --entrypoint=/usr/bin/python3 -ti heilman-sagae test_hs2015.py
