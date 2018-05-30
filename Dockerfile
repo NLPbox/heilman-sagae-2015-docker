@@ -40,7 +40,7 @@ RUN ./configure && make && make install && ldconfig
 # -----------------------------------
 
 WORKDIR /opt
-RUN git clone -b feature/update_skll https://github.com/arne-cl/discourse-parsing.git
+RUN git clone -b feature/update_skll https://github.com/arne-cl/discourse-parsing.git && echo
 WORKDIR /opt/discourse-parsing
 
 RUN pip3 install -r requirements.txt && \
