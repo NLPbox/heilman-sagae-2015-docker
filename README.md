@@ -1,6 +1,10 @@
 
 # heilman-sagae-2015-docker
 
+[![Travis Build Status](https://travis-ci.org/NLPbox/heilman-sagae-2015-docker.svg?branch=master)](https://travis-ci.org/NLPbox/heilman-sagae-2015-docker)  
+[![Docker Build Status](https://img.shields.io/docker/build/nlpbox/heilman-sagae-2015.svg)](https://hub.docker.com/r/nlpbox/heilman-sagae-2015/)  
+
+
 This docker container allows you to build, install and run the
 [Heilman and Sagae (2015) RST discourse parser](https://github.com/EducationalTestingService/discourse-parsing)
 in a docker container.
