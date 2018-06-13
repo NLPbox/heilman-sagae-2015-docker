@@ -148,6 +148,6 @@ was donated to the State of Israel.
 
 # Citation
 
-Heilman, Michael and Sagae, Kenji (2015).
-[Fast Rhetorical Structure Theory Discourse Parsing.](https://arxiv.org/abs/1505.02425) 
+Heilman, Michael and Sagae, Kenji (2015).  
+[Fast Rhetorical Structure Theory Discourse Parsing.](https://arxiv.org/abs/1505.02425)   
 arXiv preprint arXiv:1505.02425
