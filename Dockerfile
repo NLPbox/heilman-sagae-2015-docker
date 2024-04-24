@@ -18,7 +18,7 @@ RUN apt-get update -y && apt-get install -y build-essential python-dev \
 # -------------------------------------
 
 WORKDIR /opt/zpar-0.7/models
-RUN wget -O english.zip http://sourceforge.net/projects/zpar/files/0.7/english.zip/download
+RUN wget -O english.zip --no-check-certificate http://sourceforge.net/projects/zpar/files/0.7/english.zip/download
 RUN dtrx english.zip
 RUN rm english.zip
 
