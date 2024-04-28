@@ -3,7 +3,8 @@
 
 FROM nlpbox/nlpbox-base:22.04
 
-RUN apt-get update -y
+RUN apt-get update -y && \
+    apt-get install -y build-essential
 
 # install conda
 WORKDIR /opt
@@ -15,7 +16,14 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py310_24.3.0-0-Linux-x86
 # Add Miniconda to PATH
 ENV PATH="/opt/miniconda/bin:${PATH}"
 
-RUN conda init bash \
-    && conda create -y -n rstenv -c conda-forge -c ets python=3.10 rstfinder
+# add path for nltk tagger model
+ENV NLTK_DATA="$HOME/nltk_data"
 
-RUN conda init && conda activate rstenv && pip install python-zpar
+# Initialize Conda and create the environment in one RUN command
+# download NLTK tagger model
+RUN conda init bash && \
+    . /opt/miniconda/etc/profile.d/conda.sh && \
+    conda create -y -n rstenv -c conda-forge -c ets python=3.10 rstfinder && \
+    pip install python-zpar && \
+    conda activate rstenv && \
+    python -m nltk.downloader maxent_treebank_pos_tagger punkt
